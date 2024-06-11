@@ -1,0 +1,14 @@
+name: Tests
+run-name: Tests
+on: [push]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v27
+        with:
+          nix_path: nixpkgs=channel:nixos-24.05
+      - run: nix-build
+      - run: nix-shell --run "yarn"
+      - run: nix-shell --run "yarn test"
