@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Run linting inside a nix-shell
+nix-shell --run "yarn lint"
+
+# Check the exit status of the lint command
+if [ $? -ne 0 ]; then
+  echo "Linting failed. Commit aborted."
+  exit 1
+fi
+
+echo "Linting passed."
+exit 0
