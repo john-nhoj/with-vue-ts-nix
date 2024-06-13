@@ -9,6 +9,7 @@
     "prettier:fix": "prettier --write ./**/*.{js,ts,vue}",
     "preview": "vite preview",
     "lint": "eslint ./**/*.{ts,vue}",
+    "lint:fix": "eslint ./**/*.{ts,vue} --fix",
     "test": "vitest run"
   },
   "dependencies": {
