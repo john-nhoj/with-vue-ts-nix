@@ -35,6 +35,9 @@
   "lint-staged": {
     "*.{js,ts,vue}": [
       "yarn lint:fix"
+    ],
+    "*.{json}": [
+      "prettier --write"
     ]
   }
 }
