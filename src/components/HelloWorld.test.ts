@@ -3,11 +3,7 @@ import { mount } from '@vue/test-utils';
 
 describe('HelloWorld.vue', () => {
   const setup = () => {
-    const wrapper = mount(HelloWorld, {
-      props: {
-        msg: 'Hello, world!',
-      },
-    });
+    const wrapper = mount(HelloWorld, { props: { msg: 'Hello, world!' } });
     return { wrapper };
   };
   it('renders correctly', () => {
