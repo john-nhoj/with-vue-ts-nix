@@ -5,20 +5,54 @@ import pluginVue from "eslint-plugin-vue";
 
 export default [
   {
-    languageOptions: {
-      globals: globals.browser,
-    },
+    languageOptions: { globals: globals.browser },
     rules: {
-      "object-curly-spacing": ["error", "always"],
       "comma-dangle": ["error", "always-multiline"],
-      "semi": ["error", "always"],
+      "comma-spacing": ["error", {
+        "after": true,
+        "before": false,
+      }],
       "indent": ["error", 2],
-      "no-trailing-spaces": "error",
-      "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0, "maxBOF": 0 }],
-      "no-multi-spaces": "error",
-      "no-mixed-spaces-and-tabs": "error",
-      "no-irregular-whitespace": "error",
+      "key-spacing": ["error", {
+        "afterColon": true,
+        "beforeColon": false,
+        "mode": "strict",
+      }],
       "no-console": "error",
+      "no-irregular-whitespace": "error",
+      "no-mixed-spaces-and-tabs": "error",
+      "no-multi-spaces": "error",
+      "no-multiple-empty-lines": ["error", {
+        "max": 1,
+        "maxBOF": 0,
+        "maxEOF": 0,
+      }],
+      "no-trailing-spaces": "error",
+      "object-curly-newline": ["error", {
+        "ExportDeclaration": {
+          "minProperties": 2,
+          "multiline": true,
+        },
+        "ImportDeclaration": {
+          "minProperties": 2,
+          "multiline": true,
+        },
+        "ObjectExpression": {
+          "minProperties": 2,
+          "multiline": true,
+        },
+        "ObjectPattern": {
+          "minProperties": 2,
+          "multiline": true,
+        },
+      }],
+      "object-curly-spacing": ["error", "always"],
+      "object-property-newline": ["error", { "allowAllPropertiesOnSameLine": false }],
+      "semi": ["error", "always"],
+      "sort-keys": ["error", "asc", {
+        "caseSensitive": true,
+        "natural": false,
+      }],
     },
   },
   pluginJs.configs.recommended,

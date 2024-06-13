@@ -8,7 +8,7 @@ export default defineConfig({
     vue(),
   ],
   test: {
-    globals: true,
     environment: 'happy-dom',
+    globals: true,
   },
 });
